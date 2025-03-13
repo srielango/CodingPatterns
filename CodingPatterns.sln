@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingPatterns", "CodingPatterns\CodingPatterns.csproj", "{40F60644-87C9-72FC-3369-04EAFCC4D8ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingPatternsTests", "CodingPatternsTests\CodingPatternsTests.csproj", "{D2C87796-CA61-0720-2FA9-1E586AF4FD4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40F60644-87C9-72FC-3369-04EAFCC4D8ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F60644-87C9-72FC-3369-04EAFCC4D8ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F60644-87C9-72FC-3369-04EAFCC4D8ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F60644-87C9-72FC-3369-04EAFCC4D8ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2C87796-CA61-0720-2FA9-1E586AF4FD4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2C87796-CA61-0720-2FA9-1E586AF4FD4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2C87796-CA61-0720-2FA9-1E586AF4FD4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2C87796-CA61-0720-2FA9-1E586AF4FD4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {219A827F-0415-4B81-A7E3-F04C2BC30CA0}
+	EndGlobalSection
+EndGlobal
