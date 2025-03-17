@@ -1,4 +1,4 @@
-﻿using CodingPatterns;
+﻿using CodingPatterns.SlidingWindow;
 using FluentAssertions;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -10,7 +10,8 @@ namespace CodingPatternsTests
         public readonly SlidingWindow _sut;
         public SlidingWindowTests()
         {
-            _sut = new SlidingWindow();
+            //_sut = new SlidingWindow(new SlidingWindowStrategy());
+            _sut = new SlidingWindow(new NaiveSlidingStrategy());
         }
 
         [TestMethod]
@@ -30,20 +31,20 @@ namespace CodingPatternsTests
             result.Should().Be(expected);
         }
 
-        //[TestMethod]
-        //[DataRow(new int[] { 1, 0, 1, 4, 1, 4, 1, 2, 3 }, 5)]
-        ////[DataRow(new int[] { 3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4 }, 5)]
-        ////[DataRow(new int[] { 0, 1, 6, 6, 4, 4, 6 }, 5)]
-        ////[DataRow(new int[] { 1, 1 }, 2)]
-        ////[DataRow(new int[] { 1, 0 }, 2)]
-        ////[DataRow(new int[] { 1, 2, 1 }, 3)]
-        ////[DataRow(new int[] { 0, 1, 2, 2 }, 3)]
-        ////[DataRow(new int[] { 1, 2, 3, 2, 2 }, 4)]
-        ////[DataRow(new int[] { 0, 0, 1, 1 }, 4)]
-        //public void int_array_returns_count_of_two_distinct_numbers(int[] arr, int expected)
-        //{
-        //    var result = _sut.FruitsIntoBaskets(arr);
-        //    result.Should().Be(expected);
-        //}
+        [TestMethod]
+        [DataRow(new int[] { 1, 0, 1, 4, 1, 4, 1, 2, 3 }, 5)]
+        [DataRow(new int[] { 3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4 }, 5)]
+        [DataRow(new int[] { 0, 1, 6, 6, 4, 4, 6 }, 5)]
+        [DataRow(new int[] { 1, 1 }, 2)]
+        [DataRow(new int[] { 1, 0 }, 2)]
+        [DataRow(new int[] { 1, 2, 1 }, 3)]
+        [DataRow(new int[] { 0, 1, 2, 2 }, 3)]
+        [DataRow(new int[] { 1, 2, 3, 2, 2 }, 4)]
+        [DataRow(new int[] { 0, 0, 1, 1 }, 4)]
+        public void int_array_returns_count_of_two_distinct_numbers(int[] arr, int expected)
+        {
+            var result = _sut.FruitsIntoBaskets(arr);
+            result.Should().Be(expected);
+        }
     }
 }
