@@ -1,4 +1,4 @@
-﻿namespace CodingPatterns
+﻿namespace CodingPatterns.TwoPointers
 {
     public class TwoPointersTechnique
     {

@@ -1,4 +1,4 @@
-﻿using CodingPatterns;
+﻿using CodingPatterns.TwoPointers;
 using FluentAssertions;
 
 namespace CodingPatternsTests

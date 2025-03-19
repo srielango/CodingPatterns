@@ -1,6 +1,6 @@
-﻿using CodingPatterns.SlidingWindow;
+﻿using CodingPatterns;
+using CodingPatterns.SlidingWindow;
 using FluentAssertions;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace CodingPatternsTests
 {
@@ -10,8 +10,14 @@ namespace CodingPatternsTests
         public readonly SlidingWindow _sut;
         public SlidingWindowTests()
         {
-            //_sut = new SlidingWindow(new SlidingWindowStrategy());
-            _sut = new SlidingWindow(new NaiveSlidingStrategy());
+            var factory = new StrategyFactory(new IProblemSolverBase[]
+            {
+                new NaiveMaxSumStrategy(),
+                new NaiveAnagramCountStrategy(),
+                new NaiveFruitsInTheBasketStrategy()
+            });
+
+            _sut = new SlidingWindow(factory);
         }
 
         [TestMethod]
