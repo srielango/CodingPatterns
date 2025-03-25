@@ -1,4 +1,4 @@
-﻿namespace CodingPatterns
+﻿namespace CodingPatterns.MergeIntervals
 {
     //Given an array of intervals, merge all the overlapping intervals into one and output the result which should have only mutually exclusive intervals
     //Example:

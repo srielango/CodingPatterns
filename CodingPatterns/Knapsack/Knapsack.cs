@@ -1,4 +1,4 @@
-﻿namespace CodingPatterns
+﻿namespace CodingPatterns.Knapsack
 {
     public class Knapsack
     {

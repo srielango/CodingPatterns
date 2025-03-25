@@ -3,7 +3,6 @@
     public class Subset
     {
         //TODO: Add Iterative method
-        //TODO: Understand how the below method works
         public void FindSubsets(List<List<int>> subset, List<int> nums, List<int> output, int index)
         {
             // Base Condition

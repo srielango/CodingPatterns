@@ -1,4 +1,4 @@
-﻿using CodingPatterns;
+﻿using CodingPatterns.Knapsack;
 using FluentAssertions;
 
 namespace CodingPatternsTests

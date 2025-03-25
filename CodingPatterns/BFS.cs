@@ -31,11 +31,11 @@ namespace CodingPatterns
             }
             else
             {
-                /* compute height of each subtree */
+                // compute height of each subtree
                 int lheight = height(root.left);
                 int rheight = height(root.right);
 
-                /* use the larger one */
+                // use the larger one
                 if (lheight > rheight)
                 {
                     return (lheight + 1);

@@ -10,5 +10,6 @@
         //Two Pointers
         public const string IsPairSum = "IsPairSum";
         public const string ThreeSum = "ThreeSum";
+        public const string TrapRainWater = "TrapRainWater";
     }
 }

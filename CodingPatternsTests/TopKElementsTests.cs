@@ -1,4 +1,4 @@
-﻿using CodingPatterns;
+﻿using CodingPatterns.TopKElements;
 using FluentAssertions;
 
 namespace CodingPatternsTests

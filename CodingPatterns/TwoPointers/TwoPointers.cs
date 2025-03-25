@@ -35,5 +35,18 @@
             var strategy = _strategyFactory.GetStrategy<int[], IList<IList<int>>>(AppConstants.ThreeSum);
             return strategy.Solve(nums);
         }
+
+        /// <summary>
+        /// Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
+        /// </summary>
+        /// <example>Input: [0,1,0,2,1,0,1,3,2,1,2,1], output: 6</example>
+        /// <example>Input: [4,2,0,3,2,5], output: 9</example>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public int Trap(int[] height)
+        {
+            var strategy = _strategyFactory.GetStrategy<int[], int>(AppConstants.TrapRainWater);
+            return strategy.Solve(height);
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using CodingPatterns;
+﻿using CodingPatterns.MergeIntervals;
 using FluentAssertions;
 
 namespace CodingPatternsTests

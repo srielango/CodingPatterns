@@ -13,7 +13,8 @@ namespace CodingPatternsTests
             var factory = new StrategyFactory(new IProblemSolverBase[]
             {
                 new TwoPointersIsPairSumStrategy(),
-                new TwoPointersThreeSumStrategy()
+                new TwoPointersThreeSumStrategy(),
+                new TwoPointersTrapStrategy()
             });
 
             _sut = new TwoPointers(factory);
@@ -28,12 +29,12 @@ namespace CodingPatternsTests
         }
 
         [TestMethod]
-        //[DataRow(new int[] { -1, 1, 0, 2, -2 }, "[[-1,1,0],[0,2,-2]]")]
-        //[DataRow(new int[] { -1, 0, 1, 2, -1, -4 }, "[[-1,-1,2],[-1,0,1]]")]
-        //[DataRow(new int[] { 0,1,1 }, "[]")] // No matching triplets
-        //[DataRow(new int[] { 0, 0, 0 }, "[[0,0,0]]")]
-        //[DataRow(new int[] {0,0,0,0}, "[[0,0,0]]")]
+        [DataRow(new int[] { -1, 1, 0, 2, -2 }, "[[-2,0,2],[-1,0,1]]")]
+        [DataRow(new int[] { -1, 0, 1, 2, -1, -4 }, "[[-1,-1,2],[-1,0,1]]")]
+        [DataRow(new int[] { 0, 0, 0 }, "[[0,0,0]]")]
+        [DataRow(new int[] { 0, 0, 0, 0 }, "[[0,0,0]]")]
         [DataRow(new int[] { 1,-1,-1,0 }, "[[-1,0,1]]")]
+        [DataRow(new int[] { 0, 1, 1 }, "[]")] // No matching triplets
         public void Array_Returns_ListOfPairs_If_Match_Found(int[] arr, string expected)
         {
             var result = _sut.ThreeSum(arr);
@@ -45,6 +46,16 @@ namespace CodingPatternsTests
         {
             return "[" + string.Join(",", result.Select(inner => "[" + string.Join(",", inner) + "]")) + "]";
         }
+
+        [TestMethod]
+        [DataRow(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 }, 6)]
+        [DataRow(new int[] { 4, 2, 0, 3, 2, 5 }, 9)]
+        public void Array_returns_WaterTrapped(int[] height, int expected)
+        {
+            var result = _sut.Trap(height);
+            result.Should().Be(expected);
+        }
+
 
         [TestMethod]
         public void Compare_Performance()
