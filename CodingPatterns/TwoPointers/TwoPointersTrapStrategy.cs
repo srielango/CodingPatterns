@@ -4,39 +4,42 @@
     {
         public string Key => AppConstants.TrapRainWater;
         
-        //TODO: Fix for performance
         public int Solve(int[] height)
         {
             int result = 0;
+            int leftMax = 0;
+            int rightMax = 0;
 
-            for (int i = 0; i < height.Length; i++)
+            int leftIndex = 0;
+            int rightIndex = height.Length - 1;
+
+            while(leftIndex < rightIndex)
             {
-                int leftMax = 0;
-                int rightMax = 0;
-
-                int leftIndex = 0;
-                int rightIndex = height.Length - 1;
-
-                while(leftIndex <= i || rightIndex >= i)
+                if (height[leftIndex] < height[rightIndex])
                 {
-                    if(leftIndex <= i)
+                    if (height[leftIndex] >= leftMax)
                     {
-                        leftMax = Math.Max(leftMax, height[leftIndex++]);
+                        leftMax = height[leftIndex];
                     }
-                    if(rightIndex >= i)
+                    else
                     {
-                        rightMax = Math.Max(rightMax, height[rightIndex--]);
+                        result = result + leftMax - height[leftIndex];
                     }
+                    leftIndex++;
                 }
-
-                var waterCapacity = Math.Min(leftMax, rightMax) - height[i];
-                if(waterCapacity < 0)
+                else
                 {
-                    waterCapacity = 0;
+                    if (height[rightIndex] >= rightMax)
+                    {
+                        rightMax = height[rightIndex];
+                    }
+                    else
+                    {
+                        result = result + rightMax - height[rightIndex];
+                    }
+                    rightIndex--;
                 }
-                result = result + waterCapacity;
             }
-
             return result;
         }
     }
