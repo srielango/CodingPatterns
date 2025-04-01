@@ -71,7 +71,5 @@ namespace CodingPatternsTests
 
             naiveTime.Should().BeGreaterThanOrEqualTo(twoPointersTime);
         }
-
-
     }
 }
